@@ -4,7 +4,10 @@ FROM php:8.2-apache
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 
 # Fix "More than one MPM loaded" error by keeping only mpm_prefork active
-RUN a2dismod mpm_event 2>/dev/null; a2dismod mpm_worker 2>/dev/null; a2enmod mpm_prefork
+RUN rm -f /etc/apache2/mods-enabled/mpm_event.load /etc/apache2/mods-enabled/mpm_event.conf \
+           /etc/apache2/mods-enabled/mpm_worker.load /etc/apache2/mods-enabled/mpm_worker.conf \
+    && ln -sf /etc/apache2/mods-available/mpm_prefork.load /etc/apache2/mods-enabled/mpm_prefork.load \
+    && ln -sf /etc/apache2/mods-available/mpm_prefork.conf /etc/apache2/mods-enabled/mpm_prefork.conf
 
 # Enable Apache rewrite module (useful for /admin and /api routes)
 RUN a2enmod rewrite
