@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register | MASUMX TRADE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .auth-container {
+            padding: 140px 20px 80px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .auth-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--card-radius);
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .auth-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+        .auth-tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        .auth-tab.active {
+            color: var(--accent-gold);
+            border-bottom-color: var(--accent-gold);
+        }
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .form-group label {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .form-control {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            border-radius: 6px;
+            color: var(--text-main);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .form-control:focus {
+            border-color: var(--accent-gold);
+            outline: none;
+        }
+        .auth-form {
+            display: none;
+        }
+        .auth-form.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                MASUMX<span>TRADE</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="nav-btn active">Login / Register</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-tabs">
+                <div class="auth-tab active" onclick="switchTab('login')">Sign In</div>
+                <div class="auth-tab" onclick="switchTab('register')">Register</div>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form active" action="" method="POST" onsubmit="alert('Login simulated. Session initialized.'); return false;">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" required placeholder="name@domain.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor:pointer;">Access Account</button>
+            </form>
+
+            <!-- Registration Form -->
+            <form id="register-form" class="auth-form" action="" method="POST" onsubmit="alert('Registration request recorded. Verification email dispatched.'); return false;">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" required placeholder="e.g. Masum Ahmed">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" required placeholder="name@domain.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" required placeholder="Choose a strong password">
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor:pointer;">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(type) {
+            document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+
+            if(type === 'login') {
+                document.querySelectorAll('.auth-tab')[0].classList.add('active');
+                document.getElementById('login-form').classList.add('active');
+            } else {
+                document.querySelectorAll('.auth-tab')[1].classList.add('active');
+                document.getElementById('register-form').classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

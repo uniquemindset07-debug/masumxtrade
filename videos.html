@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Videos Grid | MASUMX TRADE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .filter-section {
+            padding: 120px 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .search-input-wrap {
+            position: relative;
+            max-width: 400px;
+            width: 100%;
+        }
+        .search-input-wrap input {
+            width: 100%;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 12px 20px 12px 45px;
+            border-radius: 50px;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
+        }
+        .search-input-wrap input:focus {
+            border-color: var(--accent-gold);
+        }
+        .search-input-wrap i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+        .category-tabs {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .tab-btn.active, .tab-btn:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                MASUMX<span>TRADE</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="videos.html" class="active">Videos</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="nav-btn">Login / Register</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filters Section -->
+    <section class="filter-section">
+        <div class="category-tabs">
+            <button class="tab-btn active">All</button>
+            <button class="tab-btn">Newest</button>
+            <button class="tab-btn">Popular</button>
+            <button class="tab-btn">Beginner</button>
+            <button class="tab-btn">Advanced</button>
+        </div>
+        <div class="search-input-wrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search trading videos...">
+        </div>
+    </section>
+
+    <!-- Main Videos Grid Section -->
+    <section class="section" style="padding-top: 0;">
+        <div class="video-grid">
+            <!-- Simulated Client-Side dynamic fetch layouts -->
+            <div class="video-card">
+                <div class="thumb-wrap">
+                    <img src="assets/images/thumb-binary.jpg" alt="">
+                    <span class="duration-tag">45:32</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-meta">
+                        <span><i class="fa-solid fa-eye"></i> 1,250 Views</span>
+                        <span>Jul 26, 2026</span>
+                    </div>
+                    <h3 class="video-title">Binary Trading Basics - Complete Masterclass 2026</h3>
+                    <div class="card-footer">
+                        <div class="instructor-info">
+                            <div class="instructor-avatar">M</div>
+                            <span>Masum X</span>
+                        </div>
+                        <a href="video-details.html?slug=binary-trading-basics" class="btn-watch">Watch <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="thumb-wrap">
+                    <img src="assets/images/thumb-candlesticks.jpg" alt="">
+                    <span class="duration-tag">55:15</span>
+                    <span class="premium-badge">Premium</span>
+                </div>
+                <div class="video-info">
+                    <div class="video-meta">
+                        <span><i class="fa-solid fa-eye"></i> 820 Views</span>
+                        <span>Jul 25, 2026</span>
+                    </div>
+                    <h3 class="video-title">Advanced Candlestick Patterns & Price Action Secrets</h3>
+                    <div class="card-footer">
+                        <div class="instructor-info">
+                            <div class="instructor-avatar">M</div>
+                            <span>Masum X</span>
+                        </div>
+                        <a href="video-details.html?slug=advanced-candlestick-patterns" class="btn-watch">Watch <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>MASUMX<span>TRADE</span></h3>
+                <p>The definitive premium video learning platform dedicated to modern algorithmic trading and retail price-action candlestick structures.</p>
+                <div class="social-links">
+                    <a href="https://t.me/masumxtrade" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                    <li><a href="pricing.html">Pricing Structure</a></li>
+                    <li><a href="contact.html">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Dynamic Categories</h4>
+                <ul>
+                    <li><a href="videos.html?category=beginner">Beginner Guides</a></li>
+                    <li><a href="videos.html?category=advanced">Advanced Masterclasses</a></li>
+                    <li><a href="videos.html?category=popular">Popular Streams</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 MASUMX TRADE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tab Activation
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
